@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Fighter Matches</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Recommended Fighters</h1>
+
+  <div class="results-container" id="resultsContainer"></div>
+
+  <div class="submit-section">
+    <a href="index.html" class="return-btn">Try Again?</a>
+  </div>
+  
+  <script>
+    const results = JSON.parse(localStorage.getItem('results')).sort() || [];
+    const container = document.getElementById('resultsContainer');
+    
+    results.forEach(name => {
+      const card = document.createElement('div');
+      card.className = 'fighter-card';
+
+      // Assume images are in /fighterRenders/<fighterName>.png
+      const img = document.createElement('img');
+      // Replace spaces with underscores or handle capitalization if needed
+      const imgPath = `/fighterRenders/${name.toLowerCase()}.png`;
+      img.src = imgPath;
+      img.alt = name;
+      console.log(img.alt);
+
+      const label = document.createElement('div');
+      label.className = 'fighter-name';
+      label.textContent = name;
+
+      card.appendChild(img);
+      card.appendChild(label);
+      container.appendChild(card);
+      
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smash Character Finder</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Find Your Smash Fighter!</h1>
+
+  <form id="preferencesForm">
+    <div class="form-group">
+      <label class="stat-label" for="runSpeed">Run Speed</label>
+      <select id="runSpeed" name="Run Speed">
+        <option value="1">Fast</option>
+        <option value="0">Average</option>
+        <option value="-1">Slow</option>
+      </select>
+      <div class="radio-group">
+        <input type="radio" name="runSpeedReq" id="runSpeedMandatory" value="1"> 
+        <label class="req-label" for="runSpeedMandatory">Mandatory</label>
+
+        <input type="radio" name="runSpeedReq" id="runSpeedPreferred" value="0"> 
+        <label class="req-label" for="runSpeedPreferred">Preferred</label>
+
+        <input type="radio" name="runSpeedReq" id="runSpeedIgnore" value="-1"> 
+        <label class="req-label" for="runSpeedIgnore">Ignore</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="stat-label" for="initialDash">Initial Dash</label>
+      <select id="initialDash" name="Initial Dash">
+        <option value="1">Fast</option>
+        <option value="0">Average</option>
+        <option value="-1">Slow</option>
+      </select>
+      <div class="radio-group">
+        <input type="radio" name="initialDashReq" id="initialDashMandatory" value="1"> 
+        <label class="req-label" for="initialDashMandatory">Mandatory</label>
+
+        <input type="radio" name="initialDashReq" id="initialDashPreferred" value="0"> 
+        <label class="req-label" for="initialDashMandatory">Preferred</label>
+
+        <input type="radio" name="initialDashReq" id="initialDashIgnore" value="-1"> 
+        <label class="req-label" for="initialDashMandatory">Ignore</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="stat-label" for="weight">Weight</label>
+      <select id="weight" name="Weight">
+        <option value="1">Heavy</option>
+        <option value="0">Average</option>
+        <option value="-1">Light</option>
+      </select>
+      <div class="radio-group">
+        <input type="radio" name="weightReq" id="weightMandatory" value="1"> 
+        <label class="req-label" for="weightMandatory">Mandatory</label>
+
+        <input type="radio" name="weightReq" id="weightPreferred" value="0"> 
+        <label class="req-label" for="weightPreferred">Preferred</label>
+
+        <input type="radio" name="weightReq" id="weightIgnore" value="-1"> 
+        <label class="req-label" for="weightIgnore">Ignore</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="stat-label" for="airSpeed">Air Speed</label>
+      <select id="airSpeed" name="Air Speed">
+        <option value="1">Fast</option>
+        <option value="0">Average</option>
+        <option value="-1">Slow</option>
+      </select>
+      <div class="radio-group">
+        <input type="radio" name="airSpeedReq" id="airSpeedMandatory" value="1"> 
+        <label class="req-label" for="airSpeedMandatory">Mandatory</label>
+
+        <input type="radio" name="airSpeedReq" id="airSpeedPreferred" value="0"> 
+        <label class="req-label" for="airSpeedPreferred">Preferred</label>
+
+        <input type="radio" name="airSpeedReq" id="airSpeedIgnore" value="-1"> 
+        <label class="req-label" for="airSpeedIgnore">Ignore</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="stat-label" for="airAcceleration">Air Acceleration</label>
+      <select id="airAcceleration" name="Air Acceleration">
+        <option value="1">Fast</option>
+        <option value="0">Average</option>
+        <option value="-1">Slow</option>
+      </select>
+      <div class="radio-group">
+        <input type="radio" name="airAccelerationReq" id="airAccelerationMandatory" value="1"> 
+        <label class="req-label" for="airAccelerationMandatory">Mandatory</label>
+
+        <input type="radio" name="airAccelerationReq" id="airAccelerationPreferred" value="0"> 
+        <label class="req-label" for="airAccelerationPreferred">Preferred</label>
+
+        <input type="radio" name="airAccelerationReq" id="airAccelerationIgnore" value="-1"> 
+        <label class="req-label" for="airAccelerationIgnore">Ignore</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="stat-label" for="fallSpeed">Fall Speed</label>
+      <select id="fallSpeed" name="Fall Speed">
+        <option value="1">Fast-Faller</option>
+        <option value="0">Average</option>
+        <option value="-1">Floaty</option>
+      </select>
+      <div class="radio-group">
+        <input type="radio" name="fallSpeedReq" id="fallSpeedMandatory" value="1"> 
+        <label class="req-label" for="fallSpeedMandatory">Mandatory</label>
+
+        <input type="radio" name="fallSpeedReq" id="fallSpeedPreferred" value="0"> 
+        <label class="req-label" for="fallSpeedPreferred">Preferred</label>
+
+        <input type="radio" name="fallSpeedReq" id="fallSpeedIgnore" value="-1"> 
+        <label class="req-label" for="fallSpeedIgnore">Ignore</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="stat-label" for="fastEscape">Escape Option</label>
+      <select id="fastEscape" name="Fast Escape">
+        <option value="1">Frame 1/2</option>
+        <option value="0">Frame 3</option>
+        <option value="-1">Frame 4</option>
+      </select>
+      <div class="radio-group">
+        <input type="radio" name="fastEscapeReq" id="fastEscapeMandatory" value="1"> 
+        <label class="req-label" for="fastEscapeMandatory">Mandatory</label>
+
+        <input type="radio" name="fastEscapeReq" id="fastEscapePreferred" value="0"> 
+        <label class="req-label" for="fastEscapePreferred">Preferred</label>
+
+        <input type="radio" name="fastEscapeReq" id="fastEscapeIgnore" value="-1"> 
+        <label class="req-label" for="fastEscapeIgnore">Ignore</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="stat-label" for="multipleJumps">Multiple Double Jumps</label>
+      <input type="checkbox" id="multipleJumps" name="Multiple Jumps" value="1">
+      <div class="radio-group">
+        <input type="radio" name="multipleJumpsReq" id="multipleJumpsMandatory" value="1"> 
+        <label class="req-label" for="multipleJumpsMandatory">Mandatory</label>
+
+        <input type="radio" name="multipleJumpsReq" id="multipleJumpsPreferred" value="0"> 
+        <label class="req-label" for="multipleJumpsPreferred">Preferred</label>
+
+        <input type="radio" name="multipleJumpsReq" id="multipleJumpsIgnore" value="-1"> 
+        <label class="req-label" for="multipleJumpsIgnore">Ignore</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="stat-label" for="antiProjectile">Anti Projectile Move</label>
+      <input type="checkbox" id="antiProjectile" name="Anti Projectile" value="1">
+      <div class="radio-group">
+        <input type="radio" name="antiProjectileReq" id="antiProjectileMandatory" value="1"> 
+        <label class="req-label" for="antiProjectilesMandatory">Mandatory</label>
+
+        <input type="radio" name="antiProjectileReq" id="antiProjectilePreferred" value="0"> 
+        <label class="req-label" for="antiProjectilePreferred">Preferred</label>
+
+        <input type="radio" name="antiProjectileReq" id="antiProjectileIgnore" value="-1"> 
+        <label class="req-label" for="antiProjectileIgnore">Ignore</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="stat-label" for="closeRange">Close Range</label>
+      <input type="checkbox" id="closeRange" name="Close Range" value="1">
+      <div class="radio-group">
+        <input type="radio" name="closeRangeReq" id="closeRangeMandatory" value="1"> 
+        <label class="req-label" for="closeRangeMandatory">Mandatory</label>
+
+        <input type="radio" name="closeRangeReq" id="closeRangePreferred" value="0"> 
+        <label class="req-label" for="closeRangePreferred">Preferred</label>
+
+        <input type="radio" name="closeRangeReq" id="closeRangeIgnore" value="-1"> 
+        <label class="req-label" for="closeRangeIgnore">Ignore</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="stat-label" for="midRange">Mid Range</label>
+      <input type="checkbox" id="midRange" name="Mid Range" value="1">
+      <div class="radio-group">
+        <input type="radio" name="midRangeReq" id="midRangeMandatory" value="1"> 
+        <label class="req-label" for="midRangeMandatory">Mandatory</label>
+
+        <input type="radio" name="midRangeReq" id="midRangePreferred" value="0"> 
+        <label class="req-label" for="midRangePreferred">Preferred</label>
+
+        <input type="radio" name="midRangeReq" id="midRangeIgnore" value="-1"> 
+        <label class="req-label" for="midRangeIgnore">Ignore</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="stat-label" for="longRange">Long Range</label>
+      <input type="checkbox" id="longRange" name="Long Range" value="1">
+      <div class="radio-group">
+        <input type="radio" name="longRangeReq" id="longRangeMandatory" value="1"> 
+        <label class="req-label" for="longRangeMandatory">Mandatory</label>
+
+        <input type="radio" name="longRangeReq" id="longRangePreferred" value="0"> 
+        <label class="req-label" for="longRangePreferred">Preferred</label>
+
+        <input type="radio" name="longRangeReq" id="longRangeIgnore" value="-1"> 
+        <label class="req-label" for="longRangeIgnore">Ignore</label>
+      </div>
+    </div>
+    
+    <div class="submit-section">
+      <button type="submit" class="submit-btn">Find Fighters!</button>
+    </div>
+  </form>
+<script src="/app.js"></script>
+</body>
+</html>

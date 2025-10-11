@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.smashfinder.Main",
+            "projectName": "Smash_character_picker"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SmashFinderApplication<smashfinder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.smashfinder.SmashFinderApplication",
+            "projectName": "smashfinder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=59363 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=smashfinder"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<smashfinder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "Main",
+            "projectName": "smashfinder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
