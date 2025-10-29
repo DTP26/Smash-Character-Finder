@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>Recommended Fighters</h1>
+  <label class="results-label" >Your best suited fighters!</label>
 
   <div class="results-container" id="resultsContainer"></div>
 
@@ -17,6 +17,7 @@
     const results = JSON.parse(localStorage.getItem('results')).sort() || [];
     const container = document.getElementById('resultsContainer');
     
+    // TODO: remove spaces in fighter render filenames
     results.forEach(name => {
       const card = document.createElement('div');
       card.className = 'fighter-card';
@@ -27,7 +28,7 @@
       const imgPath = `/fighterRenders/${name.toLowerCase()}.png`;
       img.src = imgPath;
       img.alt = name;
-      console.log(img.alt);
+      //console.log(img.alt);
 
       const label = document.createElement('div');
       label.className = 'fighter-name';

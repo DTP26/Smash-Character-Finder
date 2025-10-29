@@ -65,11 +65,10 @@ public class FighterMap {
                     .substring(0, 1));
             // account for characters with frame 1 escapes that aren't airdodges
             if (("Bayonetta Duck Hunt Jigglypuff Ken Little Mac Lucina Luigi Mii Brawler" +
-                    "Marth Olimar Pac Man Squritle Ivysaur Charizard Ryu Shulk Snake Yoshi").contains(name)) {
-                //this.nameMap.get(name).fastEscape = 1;
+                    "Marth Olimar Pac Man Squritle Ivysaur Charizard Ryu Shulk Snake Yoshi").contains(name) || (airdodgeSpeed < 3)) {
                 this.nameMap.get(name).stats.put("Fast Escape", 1);
             } else {
-                this.nameMap.get(name).stats.put("Fast Escape", Integer.compare(3, airdodgeSpeed));
+                this.nameMap.get(name).stats.put("Fast Escape", 0);
             }
             //System.out.println("Fast escape of " + name + " is " + this.nameMap.get(name).fastEscape);
         }

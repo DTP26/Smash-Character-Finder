@@ -4,46 +4,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  justify-content: center;
   background-color: #181818;
   color: #ffffff;
-  justify-content: center;   /* centers content vertically */
-  min-height: 100vh;
   box-sizing: border-box;
-}
-
-/* Selection page stuff */
-
-form {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  text-align: center;
-  background-color: #2b2b2b;
-  padding: 20px;
-  border-radius: 10px;
-  justify-items: center;
-}
-
-/* Make each label + input/checkbox group a block with spacing */
-.form-group {
-  text-align: center;
-  background-color: #3a3a3a;
-  padding: 15px;
-  border-radius: 8px;
-  width: 95%;                             /* keeps them uniform */
-}
-
-.radio-group {
-  display: flex;
-  gap: 20px; /* space between radios */
-  margin-bottom: 5px;
-  text-align: center;
-  justify-content: center; 
-}
-
-input[type="radio"] {
-  transform: scale(2.0);
 }
 
 label {
@@ -51,31 +15,110 @@ label {
   margin-bottom: 5px;
 }
 
-.stat-label {
-  white-space: nowrap;
+.title-label {
+  font-size: 100px;
+  font-weight: bold;
   text-align: center;
-  font-size: 3vw;
-  margin-bottom: 10px;
+  text-decoration: solid;
+  color: rgb(255, 255, 255);
+  margin-bottom: 5px;
 }
 
-.req-label {
-  font-size: 2vh;
+/* Selection page stuff */
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
   text-align: center;
+  padding: 2rem;
+  justify-content: center;
+  max-width: 2000px;
+  margin: auto;
+}
+
+/* Make each label + input/checkbox group a block with spacing */
+.form-group {
+  text-align: center;
+  background-color: #3a3a3a;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 512px;    
+  height: 280px;                        
 }
 
 select {
   transform: scale(1.5);
-  margin-bottom: 10px;
+  margin-bottom: 1em;
+  position: relative;
+  left: -164px;
+}
+
+.stat-label {
+  white-space: nowrap;
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.radio-group {
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+  left: -164px;
+}
+
+input[type="radio"] {
+  transform: scale(2.0);
+}
+
+.req-label {
+  font-size: 24px;
+  text-align: center;
+}
+
+
+.checkbox-group {
+  display: flex;               /* lays out items horizontally */
+  justify-content: center;     /* centers them horizontally */
+  align-items: center;         /* vertically aligns checkbox + label */                 
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;                  /* space between checkbox and text */
+  font-size: 24px;             /* matches your other labels */
+
+}
+
+.checkbox-group input[type="checkbox"] {
+  transform: scale(1.5);         /* makes checkboxes larger */
 }
 
 input[type="checkbox"] {
-  transform: scale(1.5);
-  margin-bottom: 10px;
+  transform: scale(3.0);
+  width: 2em;
+  margin-bottom: 35px;
+  position: relative;
+  left: -0px;
+}
+
+.stat-video {
+  display: block;
+  margin-top: 1em;
+  width: 20em;
+  height: auto;
+  position: relative;
+  left: 200px;
+  bottom: 180px;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.3s ease;
 }
 
 .submit-section {
-  grid-column: 1 / -1;                    /* spans all columns */
   text-align: center;
+  flex-basis: 100%;
   margin-top: 20px;
 }
 
@@ -83,8 +126,8 @@ input[type="checkbox"] {
   background: #ff3b3b;
   border: none;
   color: white;
-  padding: 20px 60px;       /* Larger button */
-  font-size: 1.2rem;        /* Bigger text */
+  padding: 20px 100px;       /* Larger button */
+  font-size: 3.2em;        /* Bigger text */
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
@@ -98,6 +141,14 @@ input[type="checkbox"] {
 
 /* Results page stuff */
 
+.results-label {
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: solid;
+  color: rgb(255, 255, 255);
+  margin-bottom: 5px;
+}
 
 .return-btn {
   text-decoration: none;
@@ -105,7 +156,7 @@ input[type="checkbox"] {
   border-radius: 8px;
   color: white;
   padding: 20px 60px;       /* Larger button */
-  font-size: 1.2rem;        /* Bigger text */
+  font-size: 3.2rem;        /* Bigger text */
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
@@ -119,7 +170,7 @@ input[type="checkbox"] {
 
 .results-container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   overflow-x: auto;
   align-items: center;
   padding: 20px 40px;          

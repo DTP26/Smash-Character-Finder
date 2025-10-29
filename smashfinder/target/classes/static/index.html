@@ -5,212 +5,223 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>Find Your Smash Fighter!</h1>
+  <label class="title-label">Find Your Super Smash Bros. Main!</label>
 
   <form id="preferencesForm">
     <div class="form-group">
-      <label class="stat-label" for="runSpeed">Run Speed</label>
+      <label class="stat-label" for="runSpeed" title="How fast the character can move across long distances along the ground.">Run Speed</label>
       <select id="runSpeed" name="Run Speed">
-        <option value="1">Fast</option>
-        <option value="0">Average</option>
+        <option value="1" >Fast</option>
+        <option value="0" selected>Average</option>
         <option value="-1">Slow</option>
       </select>
       <div class="radio-group">
         <input type="radio" name="runSpeedReq" id="runSpeedMandatory" value="1"> 
-        <label class="req-label" for="runSpeedMandatory">Mandatory</label>
+        <label class="req-label" for="runSpeedMandatory" title="Characters will only be recommended if they have this attribute.">Mandatory</label>
 
         <input type="radio" name="runSpeedReq" id="runSpeedPreferred" value="0"> 
-        <label class="req-label" for="runSpeedPreferred">Preferred</label>
+        <label class="req-label" for="runSpeedPreferred" title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="runSpeedReq" id="runSpeedIgnore" value="-1"> 
-        <label class="req-label" for="runSpeedIgnore">Ignore</label>
+        <input type="radio" name="runSpeedReq" id="runSpeedIgnore" value="-1"checked> 
+        <label class="req-label" for="runSpeedIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/RunSpeed_0.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="form-group">
-      <label class="stat-label" for="initialDash">Initial Dash</label>
+      <label class="stat-label" for="initialDash" title="How quickly the character moves grounded in short bursts.">Initial Dash</label>
       <select id="initialDash" name="Initial Dash">
         <option value="1">Fast</option>
-        <option value="0">Average</option>
+        <option value="0" selected>Average</option>
         <option value="-1">Slow</option>
       </select>
       <div class="radio-group">
         <input type="radio" name="initialDashReq" id="initialDashMandatory" value="1"> 
-        <label class="req-label" for="initialDashMandatory">Mandatory</label>
+        <label class="req-label" for="initialDashMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
 
         <input type="radio" name="initialDashReq" id="initialDashPreferred" value="0"> 
-        <label class="req-label" for="initialDashMandatory">Preferred</label>
+        <label class="req-label" for="initialDashMandatory"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="initialDashReq" id="initialDashIgnore" value="-1"> 
-        <label class="req-label" for="initialDashMandatory">Ignore</label>
+        <input type="radio" name="initialDashReq" id="initialDashIgnore" value="-1"checked> 
+        <label class="req-label" for="initialD\
+        ashMandatory" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/InitialDash_0.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="form-group">
-      <label class="stat-label" for="weight">Weight</label>
+      <label class="stat-label" for="weight" title="How far the character will be knocked away when hit.">Weight</label>
       <select id="weight" name="Weight">
         <option value="1">Heavy</option>
-        <option value="0">Average</option>
+        <option value="0" selected>Average</option>
         <option value="-1">Light</option>
       </select>
       <div class="radio-group">
         <input type="radio" name="weightReq" id="weightMandatory" value="1"> 
-        <label class="req-label" for="weightMandatory">Mandatory</label>
+        <label class="req-label" for="weightMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
 
         <input type="radio" name="weightReq" id="weightPreferred" value="0"> 
-        <label class="req-label" for="weightPreferred">Preferred</label>
+        <label class="req-label" for="weightPreferred"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="weightReq" id="weightIgnore" value="-1"> 
-        <label class="req-label" for="weightIgnore">Ignore</label>
+        <input type="radio" name="weightReq" id="weightIgnore" value="-1"checked> 
+        <label class="req-label" for="weightIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/Weight_0.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="form-group">
-      <label class="stat-label" for="airSpeed">Air Speed</label>
+      <label class="stat-label" for="airSpeed" title="How quickly the character moves forward in the air.">Air Speed</label>
       <select id="airSpeed" name="Air Speed">
         <option value="1">Fast</option>
-        <option value="0">Average</option>
+        <option value="0" selected>Average</option>
         <option value="-1">Slow</option>
       </select>
       <div class="radio-group">
         <input type="radio" name="airSpeedReq" id="airSpeedMandatory" value="1"> 
-        <label class="req-label" for="airSpeedMandatory">Mandatory</label>
+        <label class="req-label" for="airSpeedMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
 
         <input type="radio" name="airSpeedReq" id="airSpeedPreferred" value="0"> 
-        <label class="req-label" for="airSpeedPreferred">Preferred</label>
+        <label class="req-label" for="airSpeedPreferred"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="airSpeedReq" id="airSpeedIgnore" value="-1"> 
-        <label class="req-label" for="airSpeedIgnore">Ignore</label>
+        <input type="radio" name="airSpeedReq" id="airSpeedIgnore" value="-1"checked> 
+        <label class="req-label" for="airSpeedIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/AirSpeed_0.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="form-group">
-      <label class="stat-label" for="airAcceleration">Air Acceleration</label>
+      <label class="stat-label" for="airAcceleration" title="How quickly the character can change directions in the air.">Air Acceleration</label>
       <select id="airAcceleration" name="Air Acceleration">
         <option value="1">Fast</option>
-        <option value="0">Average</option>
+        <option value="0" selected>Average</option>
         <option value="-1">Slow</option>
       </select>
       <div class="radio-group">
         <input type="radio" name="airAccelerationReq" id="airAccelerationMandatory" value="1"> 
-        <label class="req-label" for="airAccelerationMandatory">Mandatory</label>
+        <label class="req-label" for="airAccelerationMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
 
         <input type="radio" name="airAccelerationReq" id="airAccelerationPreferred" value="0"> 
-        <label class="req-label" for="airAccelerationPreferred">Preferred</label>
+        <label class="req-label" for="airAccelerationPreferred"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="airAccelerationReq" id="airAccelerationIgnore" value="-1"> 
-        <label class="req-label" for="airAccelerationIgnore">Ignore</label>
+        <input type="radio" name="airAccelerationReq" id="airAccelerationIgnore" value="-1"checked> 
+        <label class="req-label" for="airAccelerationIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/AirAcceleration_0.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="form-group">
-      <label class="stat-label" for="fallSpeed">Fall Speed</label>
+      <label class="stat-label" for="fallSpeed" title="How fast the character will fall to the ground when airborne.">Fall Speed</label>
       <select id="fallSpeed" name="Fall Speed">
         <option value="1">Fast-Faller</option>
-        <option value="0">Average</option>
+        <option value="0" selected>Average</option>
         <option value="-1">Floaty</option>
       </select>
       <div class="radio-group">
-        <input type="radio" name="fallSpeedReq" id="fallSpeedMandatory" value="1"> 
-        <label class="req-label" for="fallSpeedMandatory">Mandatory</label>
+        <input type="radio" name="fallSpeedReq" id="fallSpeedManda
+        
+        tory" value="1"> 
+        <label class="req-label" for="fallSpeedMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
 
         <input type="radio" name="fallSpeedReq" id="fallSpeedPreferred" value="0"> 
-        <label class="req-label" for="fallSpeedPreferred">Preferred</label>
+        <label class="req-label" for="fallSpeedPreferred"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="fallSpeedReq" id="fallSpeedIgnore" value="-1"> 
-        <label class="req-label" for="fallSpeedIgnore">Ignore</label>
+        <input type="radio" name="fallSpeedReq" id="fallSpeedIgnore" value="-1"checked> 
+        <label class="req-label" for="fallSpeedIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/FallSpeed_0.mp4" type="video/mp4">
+      </video>
     </div>
 
     <div class="form-group">
-      <label class="stat-label" for="fastEscape">Escape Option</label>
-      <select id="fastEscape" name="Fast Escape">
-        <option value="1">Frame 1/2</option>
-        <option value="0">Frame 3</option>
-        <option value="-1">Frame 4</option>
-      </select>
+      <label class="stat-label" for="fastEscape" title="Whether the character can become invulnerable earlier than frame 3 (standard airdodge frame).">Fast Escape Option</label>
+      <input type="checkbox" id="fastEscape" name="Fast Escape" value="1">
       <div class="radio-group">
         <input type="radio" name="fastEscapeReq" id="fastEscapeMandatory" value="1"> 
-        <label class="req-label" for="fastEscapeMandatory">Mandatory</label>
+        <label class="req-label" for="fastEscapeMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
 
         <input type="radio" name="fastEscapeReq" id="fastEscapePreferred" value="0"> 
-        <label class="req-label" for="fastEscapePreferred">Preferred</label>
+        <label class="req-label" for="fastEscapePreferred"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="fastEscapeReq" id="fastEscapeIgnore" value="-1"> 
-        <label class="req-label" for="fastEscapeIgnore">Ignore</label>
+        <input type="radio" name="fastEscapeReq" id="fastEscapeIgnore" value="-1"checked> 
+        <label class="req-label" for="fastEscapeIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/FastEscape_unchecked.mp4" type="video/mp4">
+      </video>
     </div>
-
     <div class="form-group">
-      <label class="stat-label" for="multipleJumps">Multiple Double Jumps</label>
+      <label class="stat-label" for="multipleJumps" title="Whether the character has more than 1 double jump.">Multiple Double Jumps</label>
       <input type="checkbox" id="multipleJumps" name="Multiple Jumps" value="1">
       <div class="radio-group">
         <input type="radio" name="multipleJumpsReq" id="multipleJumpsMandatory" value="1"> 
-        <label class="req-label" for="multipleJumpsMandatory">Mandatory</label>
+        <label class="req-label" for="multipleJumpsMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
 
         <input type="radio" name="multipleJumpsReq" id="multipleJumpsPreferred" value="0"> 
-        <label class="req-label" for="multipleJumpsPreferred">Preferred</label>
+        <label class="req-label" for="multipleJumpsPreferred"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="multipleJumpsReq" id="multipleJumpsIgnore" value="-1"> 
-        <label class="req-label" for="multipleJumpsIgnore">Ignore</label>
+        <input type="radio" name="multipleJumpsReq" id="multipleJumpsIgnore" value="-1"checked> 
+        <label class="req-label" for="multipleJumpsIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/MultipleJumps_unchecked.mp4" type="video/mp4">
+      </video>
     </div>
 
     <div class="form-group">
-      <label class="stat-label" for="antiProjectile">Anti Projectile Move</label>
+      <label class="stat-label" for="antiProjectile" title="Whether the character has a reflector, 
+      an absord move, or anything that strictly beats projectiles.">Anti Projectile Move</label>
       <input type="checkbox" id="antiProjectile" name="Anti Projectile" value="1">
       <div class="radio-group">
         <input type="radio" name="antiProjectileReq" id="antiProjectileMandatory" value="1"> 
-        <label class="req-label" for="antiProjectilesMandatory">Mandatory</label>
+        <label class="req-label" for="antiProjectilesMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
 
         <input type="radio" name="antiProjectileReq" id="antiProjectilePreferred" value="0"> 
-        <label class="req-label" for="antiProjectilePreferred">Preferred</label>
+        <label class="req-label" for="antiProjectilePreferred"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="antiProjectileReq" id="antiProjectileIgnore" value="-1"> 
-        <label class="req-label" for="antiProjectileIgnore">Ignore</label>
+        <input type="radio" name="antiProjectileReq" id="antiProjectileIgnore" value="-1"checked> 
+        <label class="req-label" for="antiProjectileIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/AntiProjectile_unchecked.mp4" type="video/mp4">
+      </video>
+
     </div>
 
     <div class="form-group">
-      <label class="stat-label" for="closeRange">Close Range</label>
-      <input type="checkbox" id="closeRange" name="Close Range" value="1">
-      <div class="radio-group">
-        <input type="radio" name="closeRangeReq" id="closeRangeMandatory" value="1"> 
-        <label class="req-label" for="closeRangeMandatory">Mandatory</label>
+      <label class="stat-label" for="effectiveRange" title="Whether the character prefers to fight at 
+      close range, mid range, and/or long range">Effective Range</label>
 
-        <input type="radio" name="closeRangeReq" id="closeRangePreferred" value="0"> 
-        <label class="req-label" for="closeRangePreferred">Preferred</label>
-
-        <input type="radio" name="closeRangeReq" id="closeRangeIgnore" value="-1"> 
-        <label class="req-label" for="closeRangeIgnore">Ignore</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="closeRange" name="Close Range" value="1">
+        <label for="closeRange"> Close Range </label>
+        <input type="checkbox" id="midRange" name="Mid Range" value="1">
+        <label for="midRange"> Mid Range </label>
+        <input type="checkbox" id="long Range" name="Long Range" value="1">
+        <label for="longRange"> Long Range </label>
       </div>
-    </div>
-
-    <div class="form-group">
-      <label class="stat-label" for="midRange">Mid Range</label>
-      <input type="checkbox" id="midRange" name="Mid Range" value="1">
+      
+        
       <div class="radio-group">
-        <input type="radio" name="midRangeReq" id="midRangeMandatory" value="1"> 
-        <label class="req-label" for="midRangeMandatory">Mandatory</label>
+        <input type="radio" name="effectiveRangeReq" id="effectiveRangeMandatory" value="1"> 
+        <label class="req-label" for="effectiveRangeMandatory"title="Character will not be considered unless they have this attribute.">Mandatory</label>
+        
+        <input type="radio" name="effectiveRangeReq" id="effectiveRangePreferred"value="0"> 
+        <label class="req-label" for="effectiveRangePreferred"title="Characters will have a higher chance of selection if they have this attribute.">Preferred</label>
 
-        <input type="radio" name="midRangeReq" id="midRangePreferred" value="0"> 
-        <label class="req-label" for="midRangePreferred">Preferred</label>
-
-        <input type="radio" name="midRangeReq" id="midRangeIgnore" value="-1"> 
-        <label class="req-label" for="midRangeIgnore">Ignore</label>
+        <input type="radio" name="effectiveRangeReq" id="effectiveRangeIgnore"value="-1" checked> 
+        <label class="req-label" for="effectiveRangeIgnore" title="This attribute will be irrelevant regarding which characters are recommended.">Ignore</label>
       </div>
+
+      <video class="stat-video" width="150" loop muted controls>
+        <source src="/statImages/EffectiveRange_C0_M0_L0.mp4" alt="effective range placeholder" type="video/mp4">
+      </video>
     </div>
-
-    <div class="form-group">
-      <label class="stat-label" for="longRange">Long Range</label>
-      <input type="checkbox" id="longRange" name="Long Range" value="1">
-      <div class="radio-group">
-        <input type="radio" name="longRangeReq" id="longRangeMandatory" value="1"> 
-        <label class="req-label" for="longRangeMandatory">Mandatory</label>
-
-        <input type="radio" name="longRangeReq" id="longRangePreferred" value="0"> 
-        <label class="req-label" for="longRangePreferred">Preferred</label>
-
-        <input type="radio" name="longRangeReq" id="longRangeIgnore" value="-1"> 
-        <label class="req-label" for="longRangeIgnore">Ignore</label>
-      </div>
-    </div>
-    
     <div class="submit-section">
       <button type="submit" class="submit-btn">Find Fighters!</button>
     </div>
