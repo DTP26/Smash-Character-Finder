@@ -34,7 +34,6 @@ public class FighterMap {
         Elements fighters =
                 homePage.selectFirst("div#charList").children();
         // ignore non character pages my removing until banjo is reached
-        // figure out a way to not hard code this
         fighters.remove(0);
         fighters.remove(0);
         fighters.remove(0);
@@ -70,11 +69,9 @@ public class FighterMap {
             } else {
                 this.nameMap.get(name).stats.put("Fast Escape", 0);
             }
-            //System.out.println("Fast escape of " + name + " is " + this.nameMap.get(name).fastEscape);
         }
-        //System.out.println("The airdodge speed of " + this.name + " is " + airdodgeSpeed);*/
 
-        // first, the weight table
+        // The weight table
         Elements weights = statsPage.selectFirst("table#weighttable > tbody").children();
         for (Element character : weights) {
             String name = character.selectFirst("td:eq(1)")
@@ -90,7 +87,6 @@ public class FighterMap {
                 name = "Rosalina and Luma";
             }
             this.nameMap.get(name).stats.put("Weight", weight);
-            //System.out.println("Weight of " + name + " is " + this.nameMap.get(name).weight);
         }
 
         // TODO: handle edge cases with characters that undergo stat changes
@@ -113,18 +109,14 @@ public class FighterMap {
                 if (name.contains("leader")) {
                     this.nameMap.get("Ice Climbers").stats.put("Run Speed", runInt);
                     this.nameMap.get("Ice Climbers").stats.put("Initial Dash", dashInt);
-                    // System.out.println("Groundspeed of " + "Ice Climbers" + " is " + this.nameMap.get("Ice Climbers").groundSpeed);
                 }
             } else {
                 this.nameMap.get(name).stats.put("Run Speed", runInt);
                 this.nameMap.get(name).stats.put("Initial Dash", dashInt);
-                //System.out.println("Ground Speed of " + name + " is " + this.nameMap.get(name).groundSpeed);
             }
-            //System.out.println("Ground speed is " + groundSpeed);
         }
 
         // airspeed table
-
 
         Elements airSpeeds = statsPage.selectFirst("table#airspeedtable > tbody").children();
         for (Element character : airSpeeds) {
@@ -141,7 +133,6 @@ public class FighterMap {
             }
             int airInt = airSpeed > 1.14 ? 1 : (airSpeed < 0.97 ? -1 : 0);
             this.nameMap.get(name).stats.put("Air Speed", airInt);
-            // System.out.println("Air speed of " + name + " is " + this.nameMap.get(name).airSpeed);
         }
         // hardcode sephiroth due to not being in the table
         this.nameMap.get("Sephiroth").stats.put("Air Speed", -1);
@@ -173,7 +164,6 @@ public class FighterMap {
             int accelInt = airAccel > 0.085 ? 1 : (airAccel < 0.06 ? -1 : 0);
             if (!name.equals("Nana")) {
                 this.nameMap.get(name).stats.put("Air Acceleration", accelInt);
-                //System.out.println("Air accel of " + name + " is " + this.nameMap.get(name).airAccel);
             }
         }
         // some characters aren't on stats page, so we hardcode to avoid computation time of loading fighter pages
@@ -202,12 +192,9 @@ public class FighterMap {
             double fastFallSpeed = Double.parseDouble(character.selectFirst("td:eq(3)").text());
 
             int fallInt = fallSpeed > 1.7 ? 1 : (fallSpeed < 1.5 ? -1 : 0);
-            //int fallGravAverage = Math.max(-1, Math.min(1, fallInt + gravTableTemp.get(name)));
             int fastFallInt = fastFallSpeed > 2.7 ? 1 : (fastFallSpeed < 2.4 ? -1 : 0);
             int floatOrFast = Math.max(-1, Math.min(1, fallInt + fastFallInt));
             this.nameMap.get(name).stats.put("Fall Speed", floatOrFast);
-            //String fallStatus = floatOrFast < 0 ? "Floaty" : (floatOrFast > 0 ? "Fast Faller" : "Average");
-            //System.out.println(name + " is a " + fallStatus);
         }
 
         // hardcode byleth, not in fall speed or gravity table
@@ -319,7 +306,6 @@ public class FighterMap {
         }
         return bestMatches;
     }
-
 
     // returns a fighter from the figherMap
 

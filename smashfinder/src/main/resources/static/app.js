@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const formGroups = document.querySelectorAll('.form-group');
 
-  // Attach GIF update listeners
+  // Updates the videos displayed based on what attributes are selected
   formGroups.forEach(group => {
     const select = group.querySelector('select');
     const checkboxes = group.querySelectorAll('input[type="checkbox"]');
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!video) return;
 
     // special case with effective range (multiple checkboxes)
+    // may be expanded for future categories later
     if (checkboxes.length > 1) {
       console.log("effective range case!")
       checkboxes.forEach(checkbox => {
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
+    // case with select box
     else if (select) {
       select.addEventListener('change', () => {
         const value = parseInt(select.value);
@@ -34,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         video.load();
         //console.log("Updated select image:", video.src);
       });
-    } else if (checkboxes.length == 1) {
+    } 
+    // case with single checkbox
+    else if (checkboxes.length == 1) {
       let checkbox = checkboxes[0];
       checkbox.addEventListener('change', () => {
         const value = checkbox.checked ? 1 : 0;
@@ -42,12 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
           ? `/statImages/${checkbox.name.replace(/\s+/g, '')}_checked.mp4`
           : `/statImages/${checkbox.name.replace(/\s+/g, '')}_unchecked.mp4`;
         video.load();
-        //console.log("Updated checkbox image:", video.src);
       });
     }
   });
-//const statName = select ? select.name : (checkbox ? checkbox.name : null);
-  // Handle form submission separately
+  // submits results of the attribute forms into the requiremments array,
+  // which will be the input of the bestFighters functionS
   const form = document.getElementById('preferencesForm');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -55,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const requirements = {};
 
     formGroups.forEach(group => {
+      // we check if the current formgroup had a select box,
+      // one checkbox, or multiple checkboxes (effective range case)
       const select = group.querySelector('select');
       const checkboxes = group.querySelectorAll('input[type="checkbox"]');
       const checkedRadio = group.querySelector('input[type="radio"]:checked');
@@ -78,8 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
       
     });
 
-    console.log("Requirements on submit:", requirements);
-
+    // sends the requirements data to fightercontroller, which will 
+    // eventually send its results to results.html
     const response = await fetch('/api/match', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

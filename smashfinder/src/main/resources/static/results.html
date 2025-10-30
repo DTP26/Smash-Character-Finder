@@ -9,26 +9,27 @@
 
   <div class="results-container" id="resultsContainer"></div>
 
+  <div class="empty-message"> No characters match your criteria! Try again with less mandatory preferences!</div>
+
   <div class="submit-section">
     <a href="index.html" class="return-btn">Try Again?</a>
   </div>
   
   <script>
+    // places each resulting fighter into a fighter card, eventually all being 
+    // stored in the results container
     const results = JSON.parse(localStorage.getItem('results')).sort() || [];
     const container = document.getElementById('resultsContainer');
     
-    // TODO: remove spaces in fighter render filenames
     results.forEach(name => {
       const card = document.createElement('div');
       card.className = 'fighter-card';
 
-      // Assume images are in /fighterRenders/<fighterName>.png
+
       const img = document.createElement('img');
-      // Replace spaces with underscores or handle capitalization if needed
       const imgPath = `/fighterRenders/${name.toLowerCase()}.png`;
       img.src = imgPath;
       img.alt = name;
-      //console.log(img.alt);
 
       const label = document.createElement('div');
       label.className = 'fighter-name';

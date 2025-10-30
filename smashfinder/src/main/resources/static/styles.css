@@ -26,6 +26,7 @@ label {
 
 /* Selection page stuff */
 
+/* form contains all of the form groups */
 form {
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +38,7 @@ form {
   margin: auto;
 }
 
-/* Make each label + input/checkbox group a block with spacing */
+/* Each attribute is inside its own form group */
 .form-group {
   text-align: center;
   background-color: #3a3a3a;
@@ -53,6 +54,8 @@ select {
   position: relative;
   left: -164px;
 }
+
+/* Label for the stat/attribute names */
 
 .stat-label {
   white-space: nowrap;
@@ -72,27 +75,26 @@ input[type="radio"] {
   transform: scale(2.0);
 }
 
+/* Label for mandatory/preferred/ignore */
 .req-label {
   font-size: 24px;
   text-align: center;
 }
 
-
 .checkbox-group {
-  display: flex;               /* lays out items horizontally */
-  justify-content: center;     /* centers them horizontally */
-  align-items: center;         /* vertically aligns checkbox + label */                 
+  display: flex;              
+  justify-content: center;     
+  align-items: center;                       
 }
 
 .checkbox-group label {
   display: flex;
-  align-items: center;                  /* space between checkbox and text */
-  font-size: 24px;             /* matches your other labels */
-
+  align-items: center;                  
+  font-size: 24px;            
 }
 
 .checkbox-group input[type="checkbox"] {
-  transform: scale(1.5);         /* makes checkboxes larger */
+  transform: scale(1.5);         
 }
 
 input[type="checkbox"] {
@@ -102,6 +104,8 @@ input[type="checkbox"] {
   position: relative;
   left: -0px;
 }
+
+/* The videos describing each attribute */
 
 .stat-video {
   display: block;
@@ -122,13 +126,13 @@ input[type="checkbox"] {
   margin-top: 20px;
 }
 
+
 .submit-btn {
   background: #ff3b3b;
   border: none;
   color: white;
-  padding: 20px 100px;       /* Larger button */
-  font-size: 3.2em;        /* Bigger text */
-  font-weight: bold;
+  padding: 20px 100px;       
+  font-size: 3.2em;       
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -155,8 +159,8 @@ input[type="checkbox"] {
   background: #0026ff;
   border-radius: 8px;
   color: white;
-  padding: 20px 60px;       /* Larger button */
-  font-size: 3.2rem;        /* Bigger text */
+  padding: 20px 60px;       
+  font-size: 3.2rem;       
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
@@ -171,23 +175,26 @@ input[type="checkbox"] {
 .results-container {
   display: flex;
   flex-wrap: wrap;
-  overflow-x: auto;
   align-items: center;
+  justify-content: center;
   padding: 20px 40px;          
-  scroll-behavior: smooth;
   width: 75vw;
   gap: 40px;
-  margin-top: 50px;
   margin-bottom: 50px;
+  max-width: 1600px;
 }
 
-.results-container::-webkit-scrollbar {
-  height: 8px;
+.empty-message {
+    display: none;
 }
 
-.results-container::-webkit-scrollbar-thumb {
-  background-color: #ff3b3b;
-  border-radius: 4px;
+.results-container:empty + .empty-message {
+    display: block;
+    font-size: 5.0rem;
+    font-style: bold;
+    color: #00a6ff;
+    max-width: 50ch;
+    margin-bottom: 100px;
 }
 
 .fighter-card {
@@ -195,7 +202,6 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /*background-color: #2b2b2b;*/
   border-radius: 10px;
   padding: 15px;
   scroll-snap-align: center;
@@ -207,7 +213,6 @@ input[type="checkbox"] {
 }
 
 .fighter-card img {
-  /*max-width: 100%;*/
   width: 400px;
   height: 400px;
   border-radius: 10px;
